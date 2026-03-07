@@ -108,6 +108,11 @@
       border-radius: 6px;
       border: 1px solid #d6e4f2;
       background: #fff;
+      transition: transform 0.25s ease;
+    }
+
+    .qr-image img:hover {
+      transform: scale(1.03);
     }
 
     .qr-text a {
@@ -120,6 +125,12 @@
       padding: 12px 15px;
       background: #f1f6fb;
       border: 1px solid #d6e4f2;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
     }
 
     .link-card strong {
@@ -156,12 +167,21 @@
         grid-template-columns: 1fr;
       }
     }
-  </style>
 
-  <style>
+    /* ----------------------------- */
+    /* ✨ Reveal Animation (추가됨) */
+    /* ----------------------------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @media print {
-
-      /* 페이지 여백 최소화 */
       @page {
         size: A4;
         margin: 10mm;
@@ -224,16 +244,17 @@
     }
   </style>
 </head>
+
 <body>
   <div class="page">
-    <header>
+
+    <header class="reveal">
       <h1>FPC | 사람 중심의 재무설계</h1>
       <p>삶을 지키는 금융, 평생을 함께하는 재무설계 파트너</p>
       <div class="tagline">Financial Planning & Consulting</div>
     </header>
 
-    <!-- FPC 한 줄 소개 + 핵심 가치 -->
-    <section>
+    <section class="reveal">
       <h2>FPC는 어떤 곳인가요?</h2>
       <p>
         FPC는 <span class="highlight">재무설계를 통해 생명보험과 금융상품에 관한 교육/컨텐츠제작/컨설팅</span>을 하는 곳입니다.<br>
@@ -246,8 +267,7 @@
       </ul>
     </section>
 
-    <!-- 프로필 + 전문 영역 -->
-    <section>
+    <section class="reveal">
       <div>
         <h2>FPC 프로필</h2>
         <p class="label">About</p>
@@ -261,43 +281,42 @@
           <li><a href="https://consulting-mark.netlify.app" target="_blank" rel="noopener noreferrer">
             FPC의 컨설팅은 이렇게 진행됩니다! (https://consulting-mark.netlify.app)</a><br>
           </li>
-        </ul>        
+        </ul>
       </div>
     </section>
 
-    <!-- 홈페이지 / 블로그 모아보기 -->
-    <section>
-    <h2>FPC를 더 알고 싶다면</h2>
-    <p class="label">Online</p>
-    <div class="links">
-      <!-- 공식 홈페이지 -->
-      <div class="link-card qr-card">
-        <div class="qr-text">
-          <strong>공식 홈페이지</strong>
-          <a href="https://fpc-wp.com" target="_blank" rel="noopener noreferrer">
-            FPC 공식 홈페이지 바로가기(https://fpc-wp.com)
-          </a>
+    <section class="reveal">
+      <h2>FPC를 더 알고 싶다면</h2>
+      <p class="label">Online</p>
+
+      <div class="links">
+        <div class="link-card qr-card">
+          <div class="qr-text">
+            <strong>공식 홈페이지</strong>
+            <a href="https://fpc-wp.com" target="_blank" rel="noopener noreferrer">
+              FPC 공식 홈페이지 바로가기(https://fpc-wp.com)
+            </a>
+          </div>
+          <div class="qr-image">
+            <img src="image/home.png" alt="홈페이지 QR코드">
+          </div>
         </div>
-        <div class="qr-image">
-          <img src="image/home.png" alt="홈페이지 QR코드">
+
+        <div class="link-card qr-card">
+          <div class="qr-text">
+            <strong>FPC 재무설계 노트 (블로그)</strong>
+            <a href="https://blog.fpc-wp.com" target="_blank" rel="noopener noreferrer">
+              상담 사례, 금융 인사이트, 돈에 대한 생각 모아보기(https://blog.fpc-wp.com)
+            </a>
+          </div>
+          <div class="qr-image">
+            <img src="image/blog.png" alt="블로그 QR코드">
+          </div>
         </div>
       </div>
-      <!-- 블로그 -->
-      <div class="link-card qr-card">
-        <div class="qr-text">
-          <strong>FPC 재무설계 노트 (블로그)</strong>
-          <a href="https://blog.fpc-wp.com" target="_blank" rel="noopener noreferrer">
-            상담 사례, 금융 인사이트, 돈에 대한 생각 모아보기(https://blog.fpc-wp.com)
-          </a>
-        </div>
-        <div class="qr-image">
-          <img src="image/blog.png" alt="블로그 QR코드">
-        </div>
-      </div>
-    </div>
     </section>
 
-    <section>
+    <section class="reveal">
       <h2>연락처</h2>
       <p>
         연락이 필요한 경우 아래 채널 중 편한 방법으로 연락 주시기 바랍니다.
@@ -308,10 +327,34 @@
       </ul>
     </section>
 
-    <footer>
-      FPC | 사람 중심의 재무설계<br>
-      © FPC. All rights reserved.(참고 : 본 문서는 A4용지 한장으로 설정되어 있습니다.)
+    <footer class="reveal">
+      © FPC. All rights reserved<br>
+      (참고 : 본 내용은 A4용지 한장으로 출력 및 전환 가능하게 설정되어 있습니다.)
     </footer>
+
   </div>
+
+  <!-- ✨ Reveal Animation Script -->
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      const trigger = window.innerHeight * 0.85;
+
+      revealElements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < trigger) {
+          el.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+    window.addEventListener('load', () => {
+      document.querySelector('footer').classList.add('visible');
+    });
+  </script>
+
 </body>
 </html>
