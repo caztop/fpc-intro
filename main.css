@@ -300,8 +300,8 @@ footer {
   }
 }
 
-/* 📱 모바일 대응 (max-width: 720px) */
-@media (max-width: 720px) {
+/* 📱 모바일 대응 (max-width: 600px) */
+@media (max-width: 600px) {
 
   .page {
     padding: 24px 16px 40px;
@@ -369,13 +369,17 @@ footer {
   }
 
   .kakao-btn {
-    display: block;          /* inline-block → block */
-    width: 100%;             /* 부모 너비 꽉 채우기 */
-    box-sizing: border-box;  /* padding 포함 계산 */
-    padding: 14px 0;         /* 위아래만 padding */
-    font-size: 1rem;         /* 모바일에서 가독성 좋게 */
-    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 240px;        /* 버튼 크기 줄이기 */
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 0.9rem;       /* 글자 크기 줄이기 */
+    background: #FFF4B8;     /* 연한 노란색 */
+    color: #2A2A2A;          /* 부드러운 검정 계열 */
+    border-radius: 8px;
     white-space: nowrap;     /* 줄바꿈 방지 */
+    box-sizing: border-box;
   }
 
   /* footer 축소 */
