@@ -1,0 +1,364 @@
+/* ----------------------------- */
+/* 1) 기본 변수 */
+/* ----------------------------- */
+:root {
+  --bg: #F1F0E4;
+  --text: #27374D;
+  --muted: #526D82;
+  --main-blue: #27374D;
+  --light-blue: #9DB2BF;
+  --highlight-yellow: #FFF9AF;
+}
+
+/* ----------------------------- */
+/* 2) 기본 레이아웃 */
+/* ----------------------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+  background: white;
+}
+
+.intro-logo {
+  width: 55px;
+  height: auto;
+  margin-bottom: 12px;
+  opacity: 0.95;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  color: var(--main-blue);
+  margin-bottom: 8px;
+}
+
+header p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.tagline {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--light-blue);
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ----------------------------- */
+/* 3) Section 스타일 */
+/* ----------------------------- */
+section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin-bottom: 20px;
+  border: 1px solid #DDE6ED;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--main-blue);
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+ul {
+  list-style: none;
+  margin-top: 6px;
+}
+
+ul li::before {
+  content: "• ";
+  color: var(--main-blue);
+}
+
+.highlight {
+  background: var(--highlight-yellow);
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+/* ----------------------------- */
+/* 4) 링크 카드 / QR 카드 */
+/* ----------------------------- */
+.links {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.qr-card {
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  align-items: center;
+  gap: 12px;
+  background: #DDE6ED;
+  border: 1px solid #DDE6ED;
+  border-radius: 10px;
+  padding: 12px 15px;
+}
+
+.qr-image img {
+  width: 90px;
+  height: 90px;
+  border-radius: 6px;
+  border: 1px solid #DDE6ED;
+  background: #fff;
+  transition: transform 0.25s ease;
+}
+
+.qr-image img:hover {
+  transform: scale(1.03);
+}
+
+.qr-text strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--main-blue);
+}
+
+.qr-text a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.qr-text a:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------- */
+/* 5) 카카오톡 버튼 */
+/* ----------------------------- */
+.kakao-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  background: #fee500;
+  color: #3a1d1d;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kakao-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+/* ----------------------------- */
+/* 6) Reveal Animation */
+/* ----------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----------------------------- */
+/* 7) Footer */
+/* ----------------------------- */
+footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ----------------------------- */
+/* 8) 🌙 다크 모드 */
+/* ----------------------------- */
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background: #121212;
+    color: #E0E0E0;
+  }
+
+  .page {
+    background: #1E1E1E;
+  }
+
+  header h1 {
+    color: #E0E0E0;
+  }
+
+  header p {
+    color: #B0BEC5;
+  }
+
+  .tagline {
+    background: #37474F;
+    color: #ECEFF1;
+  }
+
+  section {
+    background: #1E1E1E;
+    border: 1px solid #37474F;
+    box-shadow: none;
+  }
+
+  section h2 {
+    color: #ECEFF1;
+  }
+
+  .label {
+    color: #90A4AE;
+  }
+
+  ul li::before {
+    color: #90A4AE;
+  }
+
+  .highlight {
+    background: #4E342E;
+    color: #FFE0B2;
+  }
+
+  .qr-card {
+    background: #263238;
+    border: 1px solid #455A64;
+  }
+
+  .qr-text strong {
+    color: #ECEFF1;
+  }
+
+  .qr-text a {
+    color: #CFD8DC;
+  }
+
+  .qr-image img {
+    border: 1px solid #455A64;
+    background: #1E1E1E;
+  }
+
+  footer {
+    color: #90A4AE;
+  }
+}
+
+/* 🖨 A4 한 장 출력용 */
+@media print {
+
+  /* A4 기본 설정 */
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    padding: 0;
+    max-width: 100%;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+
+  /* 섹션 간격 축소 */
+  section {
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    box-shadow: none !important;
+    border: 1px solid #ccc;
+  }
+
+  /* 헤더 축소 */
+  header {
+    margin-bottom: 16px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  /* 텍스트 크기 조정 */
+  section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  p, li, a {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  /* QR 크기 축소 */
+  .qr-card {
+    grid-template-columns: 1fr 70px;
+    gap: 8px;
+  }
+
+  .qr-image img {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* 태그라인 축소 */
+  .tagline {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+
+  /* 카카오 버튼은 출력 시 숨김 (원하면 유지 가능) */
+  .kakao-btn {
+    display: none !important;
+  }
+
+  /* footer 축소 */
+  footer {
+    margin-top: 10px;
+    font-size: 0.7rem;
+  }
+
+  /* 애니메이션 제거 */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
