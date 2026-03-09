@@ -215,6 +215,23 @@ footer {
     background: #1E1E1E;
   }
 
+  /* 모든 링크 */
+  a,
+  .qr-text a,
+  .link-card a,
+  section ul li a {
+    color: #FFE082 !important;   /* 부드러운 연노랑 */
+  }
+
+  /* hover 시 조금 더 밝게 */
+  a:hover,
+  .qr-text a:hover,
+  .link-card a:hover,
+  section ul li a:hover {
+    color: #FFECB3 !important;   /* 더 밝은 노랑 */
+    text-decoration: underline;
+  }
+
   .intro-logo {
     filter: invert(1) brightness(1.8);
   }
@@ -271,6 +288,11 @@ footer {
   .qr-image img {
     border: 1px solid #455A64;
     background: #1E1E1E;
+  }
+
+  /* 전화번호/이메일이 링크가 아닐 때도 색상 적용 */
+  section ul li {
+    color: #FFE082 !important;
   }
 
   footer {
