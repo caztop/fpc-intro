@@ -67,7 +67,7 @@ header p {
 /* 3) Section 스타일 */
 /* ----------------------------- */
 section {
-  background: #fff;
+  background: #FAF8F0;
   border-radius: 12px;
   padding: 24px 32px;
   margin-bottom: 20px;
@@ -220,7 +220,7 @@ footer {
   .qr-text a,
   .link-card a,
   section ul li a {
-    color: #FFE082 !important;   /* 부드러운 연노랑 */
+    color: white !important;   /* 부드러운 연노랑 */
   }
 
   /* hover 시 조금 더 밝게 */
@@ -228,7 +228,7 @@ footer {
   .qr-text a:hover,
   .link-card a:hover,
   section ul li a:hover {
-    color: #FFECB3 !important;   /* 더 밝은 노랑 */
+    color: white !important;   /* 더 밝은 노랑 */
     text-decoration: underline;
   }
 
@@ -292,7 +292,7 @@ footer {
 
   /* 전화번호/이메일이 링크가 아닐 때도 색상 적용 */
   section ul li {
-    color: #FFE082 !important;
+    color: white !important;
   }
 
   footer {
@@ -363,11 +363,19 @@ footer {
   }
 
   /* 카카오 버튼 모바일 최적화 */
-  .kakao-btn {
+  section ul li {
     width: 100%;
+    display: block;
+  }
+
+  .kakao-btn {
+    display: block;          /* inline-block → block */
+    width: 100%;             /* 부모 너비 꽉 채우기 */
+    box-sizing: border-box;  /* padding 포함 계산 */
+    padding: 14px 0;         /* 위아래만 padding */
+    font-size: 1rem;         /* 모바일에서 가독성 좋게 */
     text-align: center;
-    padding: 12px 0;
-    font-size: 0.95rem;
+    white-space: nowrap;     /* 줄바꿈 방지 */
   }
 
   /* footer 축소 */
