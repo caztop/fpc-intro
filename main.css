@@ -383,6 +383,10 @@ footer {
     text-align: center; 
   }
 
+  .non-mobile {
+    display: none;
+  }
+
   /* footer 축소 */
   footer {
     font-size: 0.75rem;
