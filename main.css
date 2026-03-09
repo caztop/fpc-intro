@@ -215,6 +215,10 @@ footer {
     background: #1E1E1E;
   }
 
+  .intro-logo {
+    filter: invert(1) brightness(1.8);
+  }
+
   header h1 {
     color: #E0E0E0;
   }
@@ -271,6 +275,83 @@ footer {
 
   footer {
     color: #90A4AE;
+  }
+}
+
+/* 📱 모바일 대응 (max-width: 720px) */
+@media (max-width: 720px) {
+
+  .page {
+    padding: 24px 16px 40px;
+  }
+
+  /* 로고 크기 축소 */
+  .intro-logo {
+    width: 45px;
+    margin-bottom: 10px;
+  }
+
+  /* h1 크기 축소 */
+  header h1 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  /* 부제목 크기 축소 */
+  header p {
+    font-size: 0.9rem;
+  }
+
+  /* 태그라인 축소 */
+  .tagline {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    margin-top: 8px;
+  }
+
+  /* section 패딩 축소 */
+  section {
+    padding: 18px 20px;
+    margin-bottom: 16px;
+  }
+
+  section h2 {
+    font-size: 1.25rem;
+  }
+
+  ul li {
+    font-size: 0.95rem;
+  }
+
+  /* QR 카드 모바일 최적화 */
+  .qr-card {
+    grid-template-columns: 1fr 70px;
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .qr-image img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .qr-text a {
+    font-size: 0.85rem;
+  }
+
+  /* 카카오 버튼 모바일 최적화 */
+  .kakao-btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 0.95rem;
+  }
+
+  /* footer 축소 */
+  footer {
+    font-size: 0.75rem;
+    margin-top: 18px;
   }
 }
 
